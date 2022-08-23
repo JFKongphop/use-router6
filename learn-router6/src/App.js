@@ -12,11 +12,6 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import SharedProductLayout from './pages/SharedProductLayout';
 
-
-
-
-
-
 function App() {
   const [ user, setUser ] = useState(null)
   return (
@@ -28,6 +23,7 @@ function App() {
           <Route index element={<Home/>} />
           <Route path="About" element={<About/>}/>
 
+          {/* to product of the content */}
           <Route path="products" element={<SharedProductLayout/>}>
             <Route index element={<Products/>}/>
 
@@ -35,8 +31,10 @@ function App() {
             <Route path=":productId" element={<SingleProduct/>} />
           </Route>
 
+          {/* when click to login that send props to this page */}
           <Route path='login' element={<Login setUser={setUser}></Login>}/>
 
+          {/* get the name and send to dashboard and show of name to this page */}
           <Route 
             path='dashboard'
             element={
@@ -45,9 +43,11 @@ function App() {
               </ProtectedRoute>}
           />
 
+          {/* when not have page that send to this error */}
           <Route path="*" element={<Error/>}/>
         </Route>
 
+        {/* when user is true that go to this page */}
         <Route path="dashboard" element={<div>dashboard</div>}>
           <Route path="stats" element={<div>stats</div>} />
         </Route>
