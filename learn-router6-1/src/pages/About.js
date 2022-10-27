@@ -10,7 +10,8 @@ const About = () =>{
         <div>
             <div>This is About</div>
             {/* nevigate to page that want to go */}
-            <button onClick={() => navigate("/")}>Back to home page</button>
+            {/* send data by navigate */}
+            <button onClick={() => navigate("/", { state : "From about page"})}>Back to home page</button>
         </div>
     )
 }

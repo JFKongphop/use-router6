@@ -12,7 +12,8 @@ const Contract = () =>{
             <div>This is Contract</div>
             <div>{name}</div>
             <div>{last}</div>
-            <Link to="/">Back to Home</Link>
+            {/* send data to state home */}
+            <Link to="/" state={"From contact page"}>Back to Home</Link>
         </div>
     )
 }
